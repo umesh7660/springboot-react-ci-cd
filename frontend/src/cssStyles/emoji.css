@@ -1,0 +1,26 @@
+/* src/App.css or src/components/Emoji.css */
+.emoji-btn {
+    background-color: #17a2b8; /* Change background color */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .emoji-btn:hover {
+    background-color: #138496; /* Darker shade on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
+  .emoji-message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  

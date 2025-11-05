@@ -1,0 +1,64 @@
+name: CI/CD for Spring Boot + React
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout your code (important!)
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Step 2: Verify files and folders exist (optional debug)
+      - name: List root directory files
+        run: ls -la
+
+      - name: List backend directory files
+        run: ls -la backend
+
+      - name: List frontend directory files
+        run: ls -la frontend
+
+      # Step 3: Setup JDK 8 for Spring Boot backend
+      - name: Setup Java JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+
+      # Step 4: Build Spring Boot backend
+      - name: Build Spring Boot backend
+        working-directory: backend
+        run: mvn clean package -DskipTests
+
+      # Step 5: Setup Node.js for React frontend
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Step 6: Build React frontend
+      - name: Build React app
+        working-directory: frontend
+        run: |
+          npm install
+          npm run build
+
+      # Step 7: Upload build artifacts
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: springboot-react-build
+          path: |
+            backend/target/*.jar
+            frontend/build/

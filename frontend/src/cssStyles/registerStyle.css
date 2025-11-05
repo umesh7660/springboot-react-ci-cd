@@ -1,0 +1,108 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Background */
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  }
+  
+  /* register Card */
+  .register-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Title */
+  .register-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Subtitle */
+  .register-subtitle {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #ddd;
+  }
+  
+  /* Input Fields */
+  .input-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .input-group input::placeholder {
+    color: #ddd;
+  }
+  
+  /* Input Icons */
+  .input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+  }
+  
+  /* Button */
+  .register-button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #3b82f6, #1e40af);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .register-button:hover {
+    background: linear-gradient(90deg, #2563eb, #1e3a8a);
+    box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.7);
+  }
+  
+  /* Footer Links */
+  .register-footer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .register-footer a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+  
+  .register-footer a:hover {
+    text-decoration: underline;
+  }
+  
